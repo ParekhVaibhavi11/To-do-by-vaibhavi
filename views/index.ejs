@@ -1,0 +1,71 @@
+<%- include('header'); %>
+
+<main class="main-content">
+    <% if (alert) { %>
+        <div class="alert <%= alert.type === 'error' ? 'alert-error' : '' %>">
+            <%= alert.message %>
+        </div>
+    <% } %>
+
+    <section class="todo-form-section">
+        <form action="/todos" method="POST" class="add-todo-form" onsubmit="return validateForm()">
+            <input type="text" name="title" id="todo-title" placeholder="Add a new task..." required>
+            <select name="priority">
+                <option value="Low">Low</option>
+                <option value="High">High</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <section class="todo-list-section">
+        <div class="filter-controls">
+            <label for="priority-filter">Filter by Priority:</label>
+            <select id="priority-filter">
+                <option value="All">All</option>
+                <option value="Low">Low</option>
+                <option value="High">High</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+        </div>
+
+        <ul class="todo-list" id="todo-list-container">
+            <% if (todos.length === 0) { %>
+                <li class="no-todos">No tasks added yet.</li>
+            <% } else { %>
+                <% todos.forEach(todo => { %>
+                    <li class="todo-item" data-priority="<%= todo.priority %>">
+                        <span class="todo-title priority-<%= todo.priority.toLowerCase() %>">
+                            <%= todo.title %>
+                        </span>
+                        <div class="todo-actions">
+                            <button class="edit-btn" onclick="toggleEdit('<%= todo.id %>', this)">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <form action="/todos/delete/<%= todo.id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="delete-btn">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="edit-form-container" style="display: none;">
+                            <form action="/todos/edit/<%= todo.id %>" method="POST" class="edit-form">
+                                <input type="text" name="title" value="<%= todo.title %>" required>
+                                <select name="priority">
+                                    <option value="Low" <%= todo.priority === 'Low' ? 'selected' : '' %>>Low</option>
+                                    <option value="High" <%= todo.priority === 'High' ? 'selected' : '' %>>High</option>
+                                    <option value="Urgent" <%= todo.priority === 'Urgent' ? 'selected' : '' %>>Urgent</option>
+                                </select>
+                                <button type="submit">Save</button>
+                                <button type="button" onclick="cancelEdit('<%= todo.id %>', this)">Cancel</button>
+                            </form>
+                        </div>
+                    </li>
+                <% }) %>
+            <% } %>
+        </ul>
+    </section>
+</main>
+
+<%- include('footer'); %>

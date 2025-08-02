@@ -1,0 +1,235 @@
+/* public/css/style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.main-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.main-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.todo-form-section, .todo-list-section {
+    margin-bottom: 30px;
+}
+
+.add-todo-form {
+    display: flex;
+    gap: 10px;
+}
+
+.add-todo-form input[type="text"], .add-todo-form select {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.add-todo-form button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.add-todo-form button:hover {
+    background-color: #45a049;
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-controls select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 5px solid;
+    transition: transform 0.2s;
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+}
+
+.todo-title {
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.edit-btn:hover {
+    color: #007bff;
+}
+
+.delete-btn {
+    color: #dc3545;
+}
+
+.delete-btn:hover {
+    color: #c82333;
+}
+
+.no-todos {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+}
+
+/* Priority styling for border and title color */
+.priority-low { color: #28a745; }
+.todo-item[data-priority="Low"] { border-left-color: #28a745; }
+
+.priority-high { color: #ffc107; }
+.todo-item[data-priority="High"] { border-left-color: #ffc107; }
+
+.priority-urgent { color: #dc3545; }
+.todo-item[data-priority="Urgent"] { border-left-color: #dc3545; }
+
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Alert styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Edit form styles */
+.edit-form-container {
+    margin-top: 10px;
+    width: 100%;
+}
+.edit-form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.edit-form input[type="text"], .edit-form select {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.edit-form button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.edit-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+.edit-form button[type="button"] {
+    background-color: #f44336;
+    color: white;
+}
+
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .add-todo-form {
+        flex-direction: column;
+    }
+
+    .add-todo-form input[type="text"],
+    .add-todo-form select,
+    .add-todo-form button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .todo-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .edit-form {
+        flex-direction: column;
+    }
+}
