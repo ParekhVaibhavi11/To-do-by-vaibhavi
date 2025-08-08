@@ -1,7 +1,7 @@
 /* public/css/style.css */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -9,7 +9,7 @@ body {
 }
 
 .main-header {
-    background-color: #4CAF50;
+    background-color: #009dff;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -28,7 +28,7 @@ body {
 }
 
 .main-content {
-    background-color: #ffffff;
+    background-color: #cee7f3;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -53,7 +53,7 @@ body {
 
 .add-todo-form button {
     padding: 12px 20px;
-    background-color: #4CAF50;
+    background-color: #009dff;
     color: white;
     border: none;
     border-radius: 4px;
@@ -63,7 +63,7 @@ body {
 }
 
 .add-todo-form button:hover {
-    background-color: #45a049;
+    background-color: #0073ff;
 }
 
 .filter-controls {
@@ -125,11 +125,11 @@ body {
 }
 
 .delete-btn {
-    color: #dc3545;
+    color: #ff0000;
 }
 
 .delete-btn:hover {
-    color: #c82333;
+    color: #74000c;
 }
 
 .no-todos {
@@ -140,14 +140,14 @@ body {
     border-radius: 6px;
 }
 
-/* Priority styling for border and title color */
-.priority-low { color: #28a745; }
+
+.priority-low { color: #229d3f; }
 .todo-item[data-priority="Low"] { border-left-color: #28a745; }
 
-.priority-high { color: #ffc107; }
+.priority-high { color: #cb7204; }
 .todo-item[data-priority="High"] { border-left-color: #ffc107; }
 
-.priority-urgent { color: #dc3545; }
+.priority-urgent { color: #ff0019; }
 .todo-item[data-priority="Urgent"] { border-left-color: #dc3545; }
 
 .main-footer {
@@ -173,7 +173,11 @@ body {
     border: 1px solid #f5c6cb;
 }
 
-/* Edit form styles */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
 .edit-form-container {
     margin-top: 10px;
     width: 100%;
