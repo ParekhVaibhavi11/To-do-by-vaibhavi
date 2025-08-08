@@ -15,14 +15,6 @@ You can view a live version of this project here:
 
 -   **Live URL:** https://to-do-list-by-vaibhavi.onrender.com/
 
-## 🛠️ Installation
-
-To run this project locally, follow these steps:
-
-1.  Clone the repository from GitHub.
-2.  Install the required dependencies using `npm install`.
-3.  Start the server with the command `node index.js`.
-
 ## ⚙️ Technology Stack
 
 -   **Backend:** Node.js, Express.js
