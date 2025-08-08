@@ -1,6 +1,6 @@
 # To-Do List Application
 
-A simple and dynamic To-Do List web application built with Node.js, Express.js, and EJS. This app allows users to efficiently manage tasks by adding, editing, and deleting items.
+A simple and To-Do List web application built with Node.js, Express.js, and EJS. This app allows users to efficiently manage tasks by adding, editing, and deleting items.
 
 ## ✨ Features
 
@@ -31,4 +31,3 @@ To run this project locally, follow these steps:
 
 ---
 
-Happy coding!
